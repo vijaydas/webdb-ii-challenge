@@ -3,6 +3,7 @@ const helmet = require('helmet');
 const cors = require("cors");
 
 const zooRouter = require("../zoo/zooRouter.js")
+const bearRouter = require("../bears/bearRouter.js")
 
 const server = express();
 server.use(cors());
@@ -12,6 +13,7 @@ server.use(cors())
 server.use(helmet());
 
 server.use('/api/zoos', zooRouter );
+server.use('/api/bears', bearRouter );
 
 server.get("/", (req, res) => {
   res.sendStatus(200)
